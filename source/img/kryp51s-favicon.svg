@@ -1,0 +1,77 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景渐变 -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="lockGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 发光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="64" height="64" rx="12" fill="url(#bgGrad)"/>
+  
+  <!-- 二进制代码背景装饰 -->
+  <text x="8" y="16" font-family="monospace" font-size="8" fill="#0f3" opacity="0.15">01</text>
+  <text x="48" y="24" font-family="monospace" font-size="8" fill="#0ff" opacity="0.15">10</text>
+  <text x="12" y="52" font-family="monospace" font-size="8" fill="#0f3" opacity="0.15">51</text>
+  
+  <!-- 盾牌轮廓 -->
+  <path d="M32 12 L20 18 L20 30 Q20 42 32 50 Q44 42 44 30 L44 18 Z" 
+        fill="none" 
+        stroke="url(#lockGrad)" 
+        stroke-width="1.5" 
+        opacity="0.4"/>
+  
+  <!-- 锁主体 -->
+  <g filter="url(#glow)">
+    <!-- 锁扣 -->
+    <path d="M26 26 L26 22 Q26 18 32 18 Q38 18 38 22 L38 26" 
+          fill="none" 
+          stroke="url(#lockGrad)" 
+          stroke-width="2.5" 
+          stroke-linecap="round"/>
+    
+    <!-- 锁身 -->
+    <rect x="24" y="26" width="16" height="12" rx="2" 
+          fill="none" 
+          stroke="url(#lockGrad)" 
+          stroke-width="2.5"/>
+    
+    <!-- 锁孔 - 形成 "K" 的形状 -->
+    <circle cx="32" cy="31" r="2" fill="url(#lockGrad)"/>
+    <rect x="31" y="31" width="2" height="4" fill="url(#lockGrad)"/>
+  </g>
+  
+  <!-- 数字 "51" 在底部 -->
+  <text x="32" y="46" 
+        font-family="monospace" 
+        font-size="9" 
+        font-weight="bold" 
+        fill="url(#lockGrad)" 
+        text-anchor="middle"
+        filter="url(#glow)">51</text>
+  
+  <!-- 扫描线效果 -->
+  <line x1="18" y1="20" x2="46" y2="20" stroke="#00ff88" stroke-width="0.5" opacity="0.3"/>
+  <line x1="18" y1="35" x2="46" y2="35" stroke="#00d9ff" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- 角落装饰 - 科技感 -->
+  <path d="M8 8 L12 8 M8 8 L8 12" stroke="#00ff88" stroke-width="1.5" opacity="0.6"/>
+  <path d="M56 8 L52 8 M56 8 L56 12" stroke="#00d9ff" stroke-width="1.5" opacity="0.6"/>
+  <path d="M8 56 L12 56 M8 56 L8 52" stroke="#00d9ff" stroke-width="1.5" opacity="0.6"/>
+  <path d="M56 56 L52 56 M56 56 L56 52" stroke="#00ff88" stroke-width="1.5" opacity="0.6"/>
+</svg>
