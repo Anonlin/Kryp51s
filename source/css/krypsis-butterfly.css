@@ -1,0 +1,564 @@
+/* ==========================================
+   Krypsis 未来科技风格 - Butterfly 主题定制
+   ========================================== */
+
+/* 全局变量定义 */
+:root {
+  /* Krypsis 配色 */
+  --krypsis-cyan: #00ffff;
+  --krypsis-green: #00ff88;
+  --krypsis-blue: #0088ff;
+  --krypsis-dark: #000000;
+  --krypsis-dark-2: #0a0e27;
+  --krypsis-dark-3: #1a1f3a;
+  
+  /* 覆盖 Butterfly 原有变量 */
+  --global-bg: #000000;
+  --card-bg: rgba(26, 31, 58, 0.4);
+  --text-bg-hover: rgba(0, 255, 255, 0.1);
+  --font-color: #00ffff;
+  --hr-border: rgba(0, 255, 255, 0.2);
+  --scrollbar-color: #00ffff;
+  --button-bg: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 136, 0.1));
+  --button-hover-bg: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 136, 0.2));
+}
+
+/* ==========================================
+   1. 全局背景和基础样式
+   ========================================== */
+
+/* 主背景 - 深空效果 */
+#web_bg {
+  background: #000 !important;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0, 255, 136, 0.03) 0%, transparent 50%) !important;
+}
+
+/* Body 基础样式 */
+body {
+  color: #00ffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif !important;
+}
+
+/* 页面容器 */
+#page {
+  backdrop-filter: blur(10px);
+}
+
+/* ==========================================
+   2. 导航栏 Header
+   ========================================== */
+
+#nav {
+  background: rgba(10, 14, 39, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 30px rgba(0, 255, 255, 0.1) !important;
+}
+
+/* 导航栏链接 */
+#nav .site-name,
+#nav .menus_items .menus_item a {
+  color: #00ffff !important;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease !important;
+}
+
+#nav .menus_items .menus_item a:hover {
+  color: #00ff88 !important;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Logo 发光效果 */
+#site-name {
+  background: linear-gradient(135deg, #00ffff 0%, #00ff88 50%, #0088ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 300 !important;
+  letter-spacing: 3px !important;
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5)); }
+  50% { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)); }
+}
+
+/* ==========================================
+   3. 卡片样式
+   ========================================== */
+
+/* 所有卡片 */
+.card-widget,
+#aside-content .card-widget,
+#recent-posts > .recent-post-item,
+.layout > div:first-child:not(.recent-posts) {
+  background: rgba(26, 31, 58, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(0, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 卡片顶部发光线 */
+.card-widget::before,
+#recent-posts > .recent-post-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+/* 卡片悬停效果 */
+.card-widget:hover,
+#recent-posts > .recent-post-item:hover {
+  border-color: rgba(0, 255, 255, 0.4) !important;
+  transform: translateY(-8px) !important;
+  box-shadow: 0 16px 48px rgba(0, 255, 255, 0.2) !important;
+}
+
+.card-widget:hover::before,
+#recent-posts > .recent-post-item:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================
+   4. 文章卡片
+   ========================================== */
+
+/* 文章标题 */
+#recent-posts > .recent-post-item .post-title,
+.post-card .post-title a,
+#post .post-title {
+  color: #00ffff !important;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease !important;
+}
+
+#recent-posts > .recent-post-item .post-title:hover,
+.post-card .post-title a:hover {
+  color: #00ff88 !important;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+}
+
+/* 文章元信息 */
+.post-meta-date,
+.post-meta-label,
+.post-meta a {
+  color: #00ff88 !important;
+  opacity: 0.7;
+}
+
+/* 文章内容 */
+.post-content,
+#article-container {
+  color: rgba(0, 255, 255, 0.9) !important;
+}
+
+/* 文章封面图片 */
+.post-bg,
+#page-header {
+  filter: brightness(0.7) contrast(1.2);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+/* ==========================================
+   5. 代码块
+   ========================================== */
+
+/* 代码块容器 */
+figure.highlight,
+.code-wrapper {
+  background: rgba(10, 14, 39, 0.8) !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1) !important;
+}
+
+/* 代码块标题 */
+figure.highlight .code-title {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 136, 0.2)) !important;
+  color: #00ffff !important;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3) !important;
+}
+
+/* 行号 */
+.highlight .line-numbers {
+  color: rgba(0, 255, 136, 0.5) !important;
+  border-right: 1px solid rgba(0, 255, 255, 0.2) !important;
+}
+
+/* 代码文本 */
+code {
+  color: #00ff88 !important;
+  background: rgba(0, 255, 255, 0.1) !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-family: 'Fira Code', 'Consolas', monospace !important;
+}
+
+pre code {
+  background: transparent !important;
+}
+
+/* ==========================================
+   6. 按钮和交互元素
+   ========================================== */
+
+/* 所有按钮 */
+button,
+.button,
+.btn,
+#rightside > div > button,
+#rightside > div > a,
+.pagination .page-number {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 136, 0.1)) !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  color: #00ffff !important;
+  border-radius: 50px !important;
+  transition: all 0.3s ease !important;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+button:hover,
+.button:hover,
+.btn:hover,
+#rightside > div > button:hover,
+#rightside > div > a:hover,
+.pagination .page-number:hover {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 136, 0.2)) !important;
+  border-color: rgba(0, 255, 255, 0.6) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 当前页码 */
+.pagination .page-number.current {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(0, 255, 136, 0.3)) !important;
+  border-color: rgba(0, 255, 255, 0.6) !important;
+}
+
+/* ==========================================
+   7. 侧边栏
+   ========================================== */
+
+/* 侧边栏头像 */
+#aside-content .card-avatar img {
+  border: 2px solid #00ffff !important;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+#aside-content .card-avatar img:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.6) !important;
+}
+
+/* 社交图标 */
+.social-icon a,
+.card-info-social-icons a {
+  color: #00ffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.social-icon a:hover,
+.card-info-social-icons a:hover {
+  color: #00ff88 !important;
+  transform: translateY(-3px) scale(1.2);
+  filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.6));
+}
+
+/* 分类/标签 */
+.tag-cloud-item,
+.category-list-item a {
+  background: rgba(0, 255, 255, 0.1) !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  color: #00ffff !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+}
+
+.tag-cloud-item:hover,
+.category-list-item a:hover {
+  background: rgba(0, 255, 255, 0.2) !important;
+  border-color: rgba(0, 255, 255, 0.6) !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4) !important;
+}
+
+/* ==========================================
+   8. 链接和文本
+   ========================================== */
+
+/* 链接 */
+a {
+  color: #00ffff !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+a:hover {
+  color: #00ff88 !important;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* 标题 */
+h1, h2, h3, h4, h5, h6 {
+  color: #00ffff !important;
+  font-weight: 300 !important;
+  letter-spacing: 2px;
+}
+
+h1::before, h2::before, h3::before {
+  content: '▸ ';
+  color: #00ff88;
+  margin-right: 8px;
+}
+
+/* ==========================================
+   9. 滚动条
+   ========================================== */
+
+/* Webkit 浏览器滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 14, 39, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffff, #00ff88);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ff88, #00ffff);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Firefox 滚动条 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffff rgba(10, 14, 39, 0.5);
+}
+
+/* ==========================================
+   10. 页脚
+   ========================================== */
+
+#footer {
+  background: rgba(10, 14, 39, 0.8) !important;
+  border-top: 1px solid rgba(0, 255, 255, 0.2) !important;
+  color: rgba(0, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px);
+}
+
+#footer a {
+  color: #00ff88 !important;
+}
+
+#footer a:hover {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+}
+
+/* ==========================================
+   11. 特殊效果
+   ========================================== */
+
+/* 扫描线效果 */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  opacity: 0.3;
+  animation: scan 8s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* 引用块 */
+blockquote {
+  border-left: 4px solid #00ffff !important;
+  background: rgba(0, 255, 255, 0.05) !important;
+  color: rgba(0, 255, 255, 0.9) !important;
+  padding: 15px 20px !important;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+/* 分割线 */
+hr {
+  border: none !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent) !important;
+  opacity: 0.3;
+}
+
+/* 表格 */
+table {
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  background: rgba(10, 14, 39, 0.3) !important;
+}
+
+table th {
+  background: rgba(0, 255, 255, 0.1) !important;
+  color: #00ffff !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+}
+
+table td {
+  border: 1px solid rgba(0, 255, 255, 0.2) !important;
+  color: rgba(0, 255, 255, 0.8) !important;
+}
+
+/* ==========================================
+   12. 加载动画
+   ========================================== */
+
+#loading-box {
+  background: #000 !important;
+}
+
+.loading-img {
+  filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6));
+}
+
+/* ==========================================
+   13. 响应式优化
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+  #nav {
+    background: rgba(10, 14, 39, 0.95) !important;
+  }
+  
+  .card-widget,
+  #recent-posts > .recent-post-item {
+    margin: 10px 5px !important;
+  }
+}
+
+/* ==========================================
+   14. 搜索框
+   ========================================== */
+
+.search-dialog,
+#local-search .search-dialog {
+  background: rgba(10, 14, 39, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+}
+
+.search-dialog input {
+  background: rgba(0, 255, 255, 0.1) !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  color: #00ffff !important;
+}
+
+.search-dialog input:focus {
+  border-color: rgba(0, 255, 255, 0.6) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3) !important;
+}
+
+/* ==========================================
+   15. 评论区
+   ========================================== */
+
+#post-comment {
+  background: rgba(26, 31, 58, 0.4) !important;
+  border: 1px solid rgba(0, 255, 255, 0.2) !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+}
+
+/* ==========================================
+   16. 右下角按钮组
+   ========================================== */
+
+#rightside {
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.2));
+}
+
+#go-up {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 136, 0.2)) !important;
+  border: 1px solid rgba(0, 255, 255, 0.4) !important;
+}
+
+#go-up:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6) !important;
+}
+
+/* ==========================================
+   17. 图片优化
+   ========================================== */
+
+img {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+/* ==========================================
+   18. 选中文本
+   ========================================== */
+
+::selection {
+  background: rgba(0, 255, 255, 0.3) !important;
+  color: #fff !important;
+}
+
+::-moz-selection {
+  background: rgba(0, 255, 255, 0.3) !important;
+  color: #fff !important;
+}
+
+/* ==========================================
+   19. Tooltip 提示框
+   ========================================== */
+
+[data-title]:hover::after {
+  background: rgba(10, 14, 39, 0.95) !important;
+  border: 1px solid rgba(0, 255, 255, 0.4) !important;
+  color: #00ffff !important;
+}
+
+/* ==========================================
+   20. 自定义图标颜色
+   ========================================== */
+
+i, .fa, .fab, .fas, .far {
+  color: #00ffff !important;
+}
+
+i:hover, .fa:hover, .fab:hover, .fas:hover, .far:hover {
+  color: #00ff88 !important;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.6));
+}

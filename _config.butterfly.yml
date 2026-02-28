@@ -56,18 +56,18 @@ social:
 favicon: /img/kryp51s-favicon.svg
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /img/krypsis-favicon.svg
   effect: false
 
 # Disable all banner images
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img:
+# default_top_img:
 
 # The banner image of index page
-index_img:
-
+index_img: "linear-gradient(135deg, #000000 0%, #0a0e27 50%, #1a1f3a 100%)"
+default_top_img: "linear-gradient(135deg, #000000 0%, #0a0e27 50%, #1a1f3a 100%)"
 # The banner image of archive page
 archive_img:
 
@@ -380,9 +380,9 @@ readmode: true
 
 # Dark Mode
 darkmode:
-  enable: true
+  enable: false
   # Toggle Button to switch dark/light mode
-  button: true
+  button: false
   # Switch dark/light mode automatically
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
@@ -756,10 +756,14 @@ site_verification:
 # Theme color for customize
 # Notice: color value must in double quotes like "#000" or may cause error!
 
-# theme_color:
-#   enable: true
-#   main: "#49B1F5"
-#   paginator: "#00c4b6"
+ theme_color:
+  enable: true
+  main: "#00ffff"
+  paginator: "#00ff88"
+  button_hover: "#00ffff"
+  text_selection: "#00ffff"
+  link_color: "#00ffff"
+  meta_color: "#00ff88"
 #   button_hover: "#FF7242"
 #   text_selection: "#00c4b6"
 #   link_color: "#99a9bf"
@@ -1059,6 +1063,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="/css/krypsis-butterfly.css">
   bottom:
     # - <script src="xxxx"></script>
 
