@@ -53,10 +53,10 @@ social:
 # Image Settings
 # --------------------------------------
 
-favicon: /img/kryp51s-favicon.svg
+favicon: /img/book_13305427.png
 
 avatar:
-  img: /img/krypsis-favicon.svg
+  img: /img/corgi_5965453.png
   effect: false
 
 # Disable all banner images
@@ -66,7 +66,7 @@ disable_top_img: false
 # default_top_img:
 
 # The banner image of index page
-index_img: /img/tech_banner_v3_scattered.svg
+index_img: /img/bg.jpg
 #index_img: "linear-gradient(135deg, #000000 0%, #0a0e27 50%, #1a1f3a 100%)"
 #default_top_img: "linear-gradient(135deg, #000000 0%, #0a0e27 50%, #1a1f3a 100%)"
 # The banner image of archive page
