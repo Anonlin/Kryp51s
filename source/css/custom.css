@@ -1,3 +1,18 @@
 #page-header {
   background-color: rgba(0, 0, 0, 0.3) !important;
 }
+
+/* Banner 图片自适应 */
+#page-header {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 手机端调整 */
+@media screen and (max-width: 768px) {
+  #page-header {
+    background-size: contain !important;
+    background-position: center center !important;
+  }
+}
