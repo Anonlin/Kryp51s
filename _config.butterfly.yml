@@ -66,7 +66,7 @@ disable_top_img: false
 # default_top_img:
 
 # The banner image of index page
-index_img: /img/bg.jpg
+index_img: /img/banner.png
 #index_img: "linear-gradient(135deg, #000000 0%, #0a0e27 50%, #1a1f3a 100%)"
 #default_top_img: "linear-gradient(135deg, #000000 0%, #0a0e27 50%, #1a1f3a 100%)"
 # The banner image of archive page
